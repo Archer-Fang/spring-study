@@ -23,4 +23,10 @@ public class UserMapperImpl implements UserMapper {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         return mapper.selectAllUsers();
     }
+
+    @Override
+    public int deleteUser(int id) {
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.deleteUser(id);
+    }
 }

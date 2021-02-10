@@ -7,4 +7,7 @@
     <select id="selectAllUsers" resultType="User">
         select * from mybatis.user
     </select>
+    <delete id="deleteUser" parameterType="int">
+        delete from mybatis.user where id=#{id}
+    </delete>
 </mapper>

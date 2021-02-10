@@ -27,4 +27,12 @@ public class MyTest {
         users.forEach(System.out::println);
 
     }
+    @Test
+    public void deleteUser() throws IOException {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-mapper.xml");
+        UserMapper userMapper = context.getBean("userMapper", UserMapper.class);
+        int r=userMapper.deleteUser(5);
+        List<User> users = userMapper.selectAllUsers();
+        users.forEach(System.out::println);
+    }
 }
